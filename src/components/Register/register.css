@@ -1,0 +1,78 @@
+body {
+  background: black;
+}
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  color: black;
+  background: rgb(255, 255, 255);
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+button.navigation {
+  -webkit-appearance: none;
+  border: 1.5px solid rgb(136, 136, 136);
+  border-style: dashed;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  padding: 2px 6px;
+  position: relative;
+}
+button.navigation.active {
+  border-color: rgb(109, 221, 155);
+  border-style: none;
+  background: rgb(109, 221, 155);
+}
+button.navigation.active:before,
+button.navigation.completed:before {
+  content: "";
+  width: 130%;
+  height: 130%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  border-radius: 100%;
+  background: none;
+  z-index: -1;
+  border: 2px solid rgb(109, 221, 155);
+  transform: translate(-15%, -15%);
+}
+
+button.navigation.completed{
+    border:none;
+}
+
+button.navigation.completed::after {
+  background: rgb(109, 221, 155);
+  content: "✔️";
+  width: 105%;
+  height: 105%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  border-radius: 100%;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separator {
+  width: 15px;
+  height: 2px;
+  background-color: rgb(175, 172, 172);
+}
