@@ -2,8 +2,9 @@ import React from "react";
 import { ArrowBack, InfoOutlined } from "@material-ui/icons";
 import "./Page.css";
 
-const FirstPage = ({ firstStepCompleted, setFirstStepCompleted }) => {
+const FirstPage = ({ setActiveStep, setFirstStepCompleted }) => {
   const handleContinue = () => {
+    setActiveStep(1);
     setFirstStepCompleted(true);
   };
   return (

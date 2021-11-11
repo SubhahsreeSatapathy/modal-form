@@ -7,7 +7,11 @@ import {
 } from "@material-ui/icons";
 import React from "react";
 
-const SecondPage = () => {
+const SecondPage = ({ setActiveStep, setSecondStepCompleted }) => {
+  const handleContinue = () => {
+    setActiveStep(2);
+    setSecondStepCompleted(true);
+  };
   return (
     <div className="second-page-section">
       <div className="form-header">
@@ -23,11 +27,7 @@ const SecondPage = () => {
         <div className="input-group ">
           <input className="input" type="text" placeholder="Firstname*" />
           <input className="input" type="text" placeholder="Middle name" />
-          <input
-            className="input"
-            type="text"
-            placeholder="Lastname*"
-          />
+          <input className="input" type="text" placeholder="Lastname*" />
         </div>
         <div className="profile-pic">
           <AddAPhotoOutlined className="profile-add" />
@@ -46,7 +46,9 @@ const SecondPage = () => {
           <AddCircleOutline className="add-circle" />
         </div>
       </div>
-      <button className="continue">Continue</button>
+      <button className="continue" onClick={handleContinue}>
+        Continue
+      </button>
     </div>
   );
 };

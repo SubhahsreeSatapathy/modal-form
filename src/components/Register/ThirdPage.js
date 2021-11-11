@@ -1,7 +1,11 @@
 import { ArrowBack, InfoOutlined } from "@material-ui/icons";
 import React from "react";
 
-const ThirdPage = () => {
+const ThirdPage = ({ setActiveStep, setThirdStepCompleted }) => {
+  const handleContinue = () => {
+    setActiveStep(3);
+    setThirdStepCompleted(true);
+  };
   return (
     <div>
       <div className="form-header">
@@ -28,24 +32,24 @@ const ThirdPage = () => {
         </div>
         <div className="second-info">
           <div className="third-page-preferences">
-             
-              <select className="input">
-                <option>Select*</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Others</option>
-              </select>
-               
-               <select className="input">
-                <option>Select*</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Others</option>
-              </select>
-          
+            <select className="input">
+              <option>Select*</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Others</option>
+            </select>
+
+            <select className="input">
+              <option>Select*</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Others</option>
+            </select>
           </div>
         </div>
-        <button className="continue">Sign Up</button>
+        <button className="continue" onClick={handleContinue}>
+          Sign Up
+        </button>
       </div>
     </div>
   );
