@@ -1,5 +1,5 @@
 import {
-  Add,
+  
   AddAPhotoOutlined,
   AddCircleOutline,
   ArrowBack,
@@ -25,9 +25,11 @@ const SecondPage = ({ setActiveStep, setSecondStepCompleted }) => {
       </div>
       <div className="second-page-fields">
         <div className="input-group ">
-          <input className="input" type="text" placeholder="Firstname*" />
-          <input className="input" type="text" placeholder="Middle name" />
-          <input className="input" type="text" placeholder="Lastname*" />
+          <div className="input-second-page">
+            <input className="input" type="text" placeholder="Firstname*" />
+            <input className="input" type="text" placeholder="Middle name" />
+            <input className="input" type="text" placeholder="Lastname*" />
+          </div>
         </div>
         <div className="profile-pic">
           <AddAPhotoOutlined className="profile-add" />

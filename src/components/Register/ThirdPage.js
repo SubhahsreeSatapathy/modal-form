@@ -14,8 +14,8 @@ const ThirdPage = ({ setActiveStep, setThirdStepCompleted }) => {
         <InfoOutlined className="icon info" />
       </div>
       <div className="second-header">
-        <h6>{"Login ID & Password"}</h6>
-        <p>Enter your Email Address and Password.</p>
+        <h6>Additional Details</h6>
+        <p>Enter some Additional Details.</p>
       </div>
       <div className="input-group">
         <div className="first-info">
@@ -31,6 +31,10 @@ const ThirdPage = ({ setActiveStep, setThirdStepCompleted }) => {
           />
         </div>
         <div className="second-info">
+          <div className="admin-select">
+            <span className="left-span">Rah Admin ?</span>
+            <span className="right-span">Hospital Admin ?</span>
+          </div>
           <div className="third-page-preferences">
             <select className="input">
               <option>Select*</option>
@@ -38,7 +42,6 @@ const ThirdPage = ({ setActiveStep, setThirdStepCompleted }) => {
               <option>Female</option>
               <option>Others</option>
             </select>
-
             <select className="input">
               <option>Select*</option>
               <option>Male</option>

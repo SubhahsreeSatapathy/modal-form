@@ -14,8 +14,11 @@ const Register = (props) => {
   const updateStep = (event) => {
     setActiveStep(parseInt(event.target.value) - 1);
   };
-
-  console.log(activeStep)
+  const resetBtns = () => {
+    setFirstStepCompleted(false);
+    setSecondStepCompleted(false);
+    setThirdStepCompleted(false);
+  };
   return (
     <>
       <div className="modal">
@@ -25,27 +28,44 @@ const Register = (props) => {
               firstStepCompleted ? "completed" : "active"
             }`}
             value="1"
-            onClick={updateStep}
+            onClick={(event) => {
+              updateStep(event);
+              resetBtns();
+            }}
           >
             1
           </button>
           <div className="separator"></div>
           <button
             className={`navigation ${
-              secondStepCompleted ? "completed" : "active"
+              secondStepCompleted
+                ? "completed"
+                : activeStep < 1
+                ? "none"
+                : "active"
             }`}
             value="2"
-            onClick={updateStep}
+            onClick={(event) => {
+              updateStep(event);
+              resetBtns();
+            }}
           >
             2
           </button>
           <div className="separator"></div>
           <button
             className={`navigation ${
-              thirdStepCompleted ? "completed" : "active"
+              thirdStepCompleted
+                ? "completed"
+                : activeStep < 2
+                ? "none"
+                : "active"
             }`}
             value="3"
-            onClick={updateStep}
+            onClick={(event) => {
+              updateStep(event);
+              resetBtns();
+            }}
           >
             3
           </button>
@@ -70,6 +90,10 @@ const Register = (props) => {
         )}
         {activeStep === 3 && (
           <Thankyou
+            setActiveStep={setActiveStep}
+            setFirstStepCompleted={setFirstStepCompleted}
+            setSecondStepCompleted={setSecondStepCompleted}
+            setThirdStepCompleted={setThirdStepCompleted}
           />
         )}
       </div>
